@@ -2,19 +2,23 @@
     <h5 class="text-center text-lg">Login</h5>
 
     <div class="p-fluid p-grid">
-        <form (ngSubmit)="login()">
+        <form [formGroup]="formGroup" (ngSubmit)="login()">
             <div class="field p-field p-col-12 p-md-4">
                 <label for="usuario">Nome</label>
-                <input type="text" pInputText id="usuario" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" [(ngModel)]="usuario" name="usuario">
-
+                <input type="text" pInputText formControlName="usuario" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
             </div>
+            <p class="danger" *ngIf="formGroup.controls.usuario.touched && formGroup.controls.usuario.errors">
+                Campo NOME não pode ser vazio e deve ter no mínimo 5 caracteres </p>
+
             <div class="field p-field p-col-12 p-md-4">
                 <label for="password">Senha</label>
-                <p-password inputId="password" [feedback]="false" class="text-base text-color surface-overlay p-2 " [(ngModel)]="senha" name="senha"></p-password>
+                <p-password inputId="password" [feedback]="false" formControlName="senha" class="text-base text-color surface-overlay p-2 "></p-password>
             </div>
-
+            <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors">
+                Campo SENHA não pode ser vazio
+            </p>
             <p-toast [baseZIndex]="8000" position="bottom-center"></p-toast>
-            <p-button type="submit" class="font-bold text-center border-round cursor-pointer bg-primary shadow-3 " label="Login " icon="pi pi-check "></p-button>
+            <p-button type="submit" [disabled]="formGroup.invalid" class="font-bold text-center border-round cursor-pointer  shadow-3 " label="Login " icon="pi pi-check "></p-button>
 
         </form>
     </div>
