@@ -10,11 +10,13 @@ import {ToastModule} from 'primeng-lts/toast';
 import {InputTextModule} from 'primeng-lts/inputtext';
 import {ImageModule} from 'primeng-lts/image';
 import {ButtonModule} from 'primeng-lts/button';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NovoUsuarioComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,52 @@
+<div class="card">
+    <h4 class="text-center text-lg mb-6">Cadastre -se e mostre seu pet ao mundo!</h4>
+    <div class="p-fluid p-grid">
+        <form [formGroup]="novoUsuarioForm" (ngSubmit)="cadastroUsuario()">
+            <div class="field p-field p-col-12 p-md-4 mb-5">
+                <span class="p-float-label">
+					<input type="text" id="inputtext" formControlName="fullName" pInputText >
+					<label for="inputtext">Nome Completo*</label>
+			</span>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.fullName.touched && novoUsuarioForm.controls.fullName.errors">
+                    Campo NOME COMPLETO não pode ser vazio e deve possuir no mínimo 5 caracteres
+                </p>
+            </div>
+            <div class="field p-field p-col-12 p-md-4m b-5">
+                <span class="p-float-label">
+				<input type="text" id="inputtext" formControlName="userName" pInputText >
+				<label for="inputtext">Usuário*</label>
+								</span>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.userName.touched && novoUsuarioForm.controls.userName.errors">
+                    Campo USUÁRIO não pode ser vazio e deve possuir no mínimo 5 caracteres
+                </p>
+            </div>
+
+
+            <div class="field p-field p-col-12 p-md-4 mb-5">
+                <span class="p-float-label">
+				<input type="e-mail" id="inputtext" formControlName="email" pInputText >
+				<label for="inputtext">Email*</label>
+		</span>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.email.touched&& novoUsuarioForm.controls.email.errors?.required">
+                    Campo EMAIL não pode ser vazio
+                </p>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.email.errors?.email">
+                    Campo EMAIL no formato incorreto!
+                </p>
+            </div>
+            <div class="p-field p-col-12 p-md-4 mb-3">
+                <span class="p-float-label">
+									<p-password  inputId="password" [feedback]="false"></p-password>
+									<label for="password" >Password</label>
+							</span>
+            </div>
+            <div class="p-field p-col-12 p-md-4 mb-2">
+                <p-button type="submit" [disabled]="novoUsuarioForm.invalid" label="Cadastrar"></p-button>
+            </div>
+        </form>
+
+        <p>Já é um usuário?
+            <a routerLink="">Fazer Login</a>
+        </p>
+    </div>
+</div>

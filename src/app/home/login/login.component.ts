@@ -51,7 +51,9 @@ this.authService.autenticar(this.formGroup.value.usuario,this.formGroup.value.se
 )
 
 	}
-
+	registrar(){
+		this.router.navigate(['home/novousuario'])
+	}
 
 
 }
