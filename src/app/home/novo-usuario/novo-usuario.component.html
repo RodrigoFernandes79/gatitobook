@@ -16,8 +16,11 @@
 				<input type="text" id="inputtext" formControlName="userName" pInputText >
 				<label for="inputtext">Usuário*</label>
 								</span>
-                <p class="danger" *ngIf="novoUsuarioForm.controls.userName.touched && novoUsuarioForm.controls.userName.errors">
-                    Campo USUÁRIO não pode ser vazio e deve possuir no mínimo 5 caracteres
+                <p class="danger" *ngIf="novoUsuarioForm.controls.userName.touched && novoUsuarioForm.controls.userName.errors?.required">
+                    Campo USUÁRIO não pode ser vazio
+                </p>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.userName.errors?.minusculo">
+                    Campo USUÁRIO não pode ser em letra maiúscula
                 </p>
             </div>
 
@@ -27,7 +30,7 @@
 				<input type="e-mail" id="inputtext" formControlName="email" pInputText >
 				<label for="inputtext">Email*</label>
 		</span>
-                <p class="danger" *ngIf="novoUsuarioForm.controls.email.touched&& novoUsuarioForm.controls.email.errors?.required">
+                <p class="danger" *ngIf="novoUsuarioForm.controls.email.touched && novoUsuarioForm.controls.email.errors?.required">
                     Campo EMAIL não pode ser vazio
                 </p>
                 <p class="danger" *ngIf="novoUsuarioForm.controls.email.errors?.email">
