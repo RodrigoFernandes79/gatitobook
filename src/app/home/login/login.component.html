@@ -1,18 +1,22 @@
 <div class="card">
     <h5 class="text-center text-lg">Login</h5>
-    <div class="card-container ">
-        <div class="field">
-            <label for="firstname1">Nome</label>
-            <input id="firstname1" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-        </div>
-        <div class="field">
-            <label for="lastname1">Senha</label>
-            <input id="lastname1" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
-        </div>
 
+    <div class="p-fluid p-grid">
+        <form (ngSubmit)="login()">
+            <div class="field p-field p-col-12 p-md-4">
+                <label for="usuario">Nome</label>
+                <input type="text" pInputText id="usuario" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" [(ngModel)]="usuario" name="usuario">
 
-        <p-button class="block font-bold  text-center  border-round  cursor-pointer bg-primary shadow-3" label="Login" icon="pi pi-check"></p-button>
+            </div>
+            <div class="field p-field p-col-12 p-md-4">
+                <label for="password">Senha</label>
+                <p-password inputId="password" [feedback]="false" class="text-base text-color surface-overlay p-2 " [(ngModel)]="senha" name="senha"></p-password>
+            </div>
 
+            <p-toast position="bottom-center"></p-toast>
+            <p-button type="submit" class="font-bold text-center border-round cursor-pointer bg-primary shadow-3 " label="Login " icon="pi pi-check "></p-button>
 
+        </form>
     </div>
+
 </div>
