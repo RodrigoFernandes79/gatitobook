@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessagesModule } from 'primeng-lts/messages';
 import { MessageModule } from 'primeng-lts/message';
 import { ToastModule } from 'primeng-lts/toast';
+import { MensagenComponent } from './componentes/mensagen/mensagen.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MensagenComponent
   ],
   imports: [
     BrowserModule,

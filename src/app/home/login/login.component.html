@@ -13,7 +13,7 @@
                 <p-password inputId="password" [feedback]="false" class="text-base text-color surface-overlay p-2 " [(ngModel)]="senha" name="senha"></p-password>
             </div>
 
-            <p-toast position="bottom-center"></p-toast>
+            <p-toast [baseZIndex]="8000" position="bottom-center"></p-toast>
             <p-button type="submit" class="font-bold text-center border-round cursor-pointer bg-primary shadow-3 " label="Login " icon="pi pi-check "></p-button>
 
         </form>
