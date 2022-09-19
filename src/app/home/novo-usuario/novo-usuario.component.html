@@ -39,12 +39,16 @@
                 <p class="danger" *ngIf="novoUsuarioForm.controls.email.errors?.email">
                     Campo EMAIL no formato incorreto!
                 </p>
+
             </div>
             <div class="p-field p-col-12 p-md-4 mb-3">
                 <span class="p-float-label">
-									<p-password  inputId="password" [feedback]="false"></p-password>
+									<p-password  inputId="password" [feedback]="false" formControlName="password"></p-password>
 									<label for="password" >Password</label>
 							</span>
+                <p class="danger" *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario">
+                    SENHA deve ser diferente do USUÁRIO!
+                </p>
             </div>
             <div class="p-field p-col-12 p-md-4 mb-2">
                 <p-button type="submit" [disabled]="novoUsuarioForm.invalid" label="Cadastrar"></p-button>
