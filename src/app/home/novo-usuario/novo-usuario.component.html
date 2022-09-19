@@ -22,6 +22,9 @@
                 <p class="danger" *ngIf="novoUsuarioForm.controls.userName.errors?.minusculo">
                     Campo USUÁRIO não pode ser em letra maiúscula
                 </p>
+                <p class="danger" *ngIf="novoUsuarioForm.controls.userName.errors?.usuarioExistente">
+                    USUÁRIO já existe
+                </p>
             </div>
 
 
