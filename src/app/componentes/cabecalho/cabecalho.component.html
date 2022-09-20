@@ -1,0 +1,25 @@
+<nav class="navbar">
+
+    <div class="container">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <a href="javascript:;" class="navbar-toggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <ul class="navbar-menu">
+        <li class="navbar-usuario">Gatito Book</li>
+        <div *ngIf="user$ | async as user">
+            <div *ngIf="user.name; else login">
+                <li class="navbar-menuitem"><a>{{ user.name }}</a></li>
+                <li class="navbar-menuitem"><a (click)="logout()">Logout</a></li>
+            </div>
+        </div>
+    </ul>
+</nav>
+<ng-template #login>
+    <span class="navbar-text">
+	<a routerLink="">Login</a>
+</span>
+</ng-template>
