@@ -17,13 +17,14 @@
             <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors">
                 Campo SENHA não pode ser vazio
             </p>
-            <p-toast [baseZIndex]="8000" position="bottom-center"></p-toast>
+
             <div class="field p-field p-col-12 p-md-4 flex-column">
                 <p-button type="submit" [disabled]="formGroup.invalid" class="flex mb-3 font-bold text-center border-round cursor-pointer shadow-3 " label="Login " icon="pi pi-check "></p-button>
                 <button pButton pRipple type="button" (click)="registrar()" label="Criar conta" class="p-button-raised p-button-text"></button>
 
             </div>
         </form>
+        <p-toast [baseZIndex]="8000" position="bottom-center"></p-toast>
     </div>
 
 </div>
