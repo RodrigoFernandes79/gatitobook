@@ -1,3 +1,5 @@
+import { RodapeModule } from './componentes/rodape/rodape.module';
+import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +27,9 @@ import { ToastModule } from 'primeng-lts/toast';
 		HttpClientModule,
 		MessagesModule,
 		MessageModule,
-		ToastModule
+		ToastModule,
+		CabecalhoModule,
+		RodapeModule
 
 
 

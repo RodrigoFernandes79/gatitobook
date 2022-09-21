@@ -1,25 +1,22 @@
-<nav class="navbar">
+<header class="sticky-top mt-4 mb-4 h-auto">
+    <p-menubar>
+        <div class="flex">
+            <div class="flex flex-row ">
+                <a class="mr-8">Gatito Book</a>
+                <div *ngIf="user$ | async as user ">
+                    <div *ngIf="user.name; else login ">
 
-    <div class="container">
-        <div class="ui-g">
-            <div class="ui-g-12">
-                <a href="javascript:;" class="navbar-toggle"><i class="fa fa-bars"></i></a>
+                        <i class="pi pi-user mr-1"></i><a class="mr-8">{{ user.name }}</a>
+                        <a (click)="logout() ">Logout</a>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <ul class="navbar-menu">
-        <li class="navbar-usuario">Gatito Book</li>
-        <div *ngIf="user$ | async as user">
-            <div *ngIf="user.name; else login">
-                <li class="navbar-menuitem"><a>{{ user.name }}</a></li>
-                <li class="navbar-menuitem"><a (click)="logout()">Logout</a></li>
-            </div>
-        </div>
-    </ul>
-</nav>
+    </p-menubar>
+</header>
 <ng-template #login>
-    <span class="navbar-text">
-	<a routerLink="">Login</a>
+    <span class="navbar-text ">
+	<a  routerLink="">Login</a>
 </span>
 </ng-template>

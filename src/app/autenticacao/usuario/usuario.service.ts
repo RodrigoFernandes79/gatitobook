@@ -2,12 +2,15 @@ import { TokenService } from './../token.service';
 import { Injectable } from '@angular/core';
 import { Usuario } from './usuario';
 import { BehaviorSubject } from 'rxjs';
-import * as jwt_decode from 'jwt-decode';
+
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+
+
 
 private usuarioSubject = new BehaviorSubject<Usuario>({})
 
@@ -24,7 +27,7 @@ private usuarioSubject = new BehaviorSubject<Usuario>({})
 	}
 
 	retornaUsuario() {
-		this.usuarioSubject.asObservable()
+		return this.usuarioSubject.asObservable()
 	}
 
 	salvaToken(token: string) {
